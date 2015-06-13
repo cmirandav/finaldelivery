@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20150613031445) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.integer  "user_id",    limit: 4
+    t.integer  "ciudad_id",  limit: 4
   end
 
   create_table "restaurants_categoria", force: :cascade do |t|
