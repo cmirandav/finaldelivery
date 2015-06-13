@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'pag_hacerpedido/index'
+
   get 'pag_administ/index'
 
   get 'pag_locales/index'

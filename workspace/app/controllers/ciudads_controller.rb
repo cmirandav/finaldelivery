@@ -71,4 +71,6 @@ class CiudadsController < ApplicationController
     def ciudad_params
       params.require(:ciudad).permit(:nomciudad)
     end
+    
+   
 end

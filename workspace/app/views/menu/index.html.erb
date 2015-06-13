@@ -170,12 +170,15 @@
                       </tr>
                       
                       <% @restaurantes.each do |restaurant| %>
+                       <%if restaurant.ciudad_id==1%>
                           <tr>
                               <td><%= restaurant.nombre %></td>
                               <td><%= restaurant.direcc %></td>
-                              <td><%= restaurant.ciudad_id %></td>
-                              <td><%= link_to 'Show', :action => :show, :id => post.id %></td>
+                              <td><%= restaurant.ciudad.nomciudad %></td>
+                              <td><li><a href="../pag_hacerpedido/index.html">Hacer pedido</a></li></td>
                           </tr>
+                           
+                        <% end  %>
                       <% end %>
                   </table>
                   
