@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   
+  get 'pag_administ/index'
+
+  get 'pag_locales/index'
+
+  get 'quienessomos/index'
+
   resources :detpedidos
   resources :pedidos
   resources :restaurants
