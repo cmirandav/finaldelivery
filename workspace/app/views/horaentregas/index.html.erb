@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Horaentregas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Deshora</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @horaentregas.each do |horaentrega| %>
+      <tr>
+        <td><%= horaentrega.deshora %></td>
+        <td><%= link_to 'Show', horaentrega %></td>
+        <td><%= link_to 'Edit', edit_horaentrega_path(horaentrega) %></td>
+        <td><%= link_to 'Destroy', horaentrega, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Horaentrega', new_horaentrega_path %>

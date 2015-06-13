@@ -11,7 +11,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150610011531) do
+ActiveRecord::Schema.define(version: 20150613031445) do
+
+  create_table "categoria", force: :cascade do |t|
+    t.string   "nomcateg",   limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "ciudads", force: :cascade do |t|
+    t.string   "nomciudad",  limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "detpedidos", force: :cascade do |t|
+    t.integer  "canped",     limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "plato_id",   limit: 4
+    t.integer  "pedido_id",  limit: 4
+  end
+
+  create_table "horaentregas", force: :cascade do |t|
+    t.string   "deshora",    limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "pedidos", force: :cascade do |t|
+    t.datetime "hora"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "user_id",        limit: 4
+    t.integer  "restaurant_id",  limit: 4
+    t.integer  "horaentrega_id", limit: 4
+  end
+
+  create_table "platos", force: :cascade do |t|
+    t.date     "fecha"
+    t.string   "nomplato",       limit: 255
+    t.integer  "cantidad",       limit: 4
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "tipoplato_id",   limit: 4
+    t.integer  "restaurants_id", limit: 4
+  end
 
   create_table "products", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -22,9 +67,33 @@ ActiveRecord::Schema.define(version: 20150610011531) do
     t.datetime "updated_at",                             null: false
   end
 
+  create_table "restaurants", force: :cascade do |t|
+    t.string   "nombre",     limit: 255
+    t.string   "direcc",     limit: 255
+    t.text     "resena",     limit: 65535
+    t.string   "correo",     limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "user_id",    limit: 4
+  end
+
+  create_table "restaurants_categoria", force: :cascade do |t|
+    t.integer "restaurant_id", limit: 4
+    t.integer "categorium_id", limit: 4
+  end
+
+  add_index "restaurants_categoria", ["categorium_id"], name: "index_restaurants_categoria_on_categorium_id", using: :btree
+  add_index "restaurants_categoria", ["restaurant_id"], name: "index_restaurants_categoria_on_restaurant_id", using: :btree
+
   create_table "tipomenutests", force: :cascade do |t|
     t.string   "name",        limit: 255
     t.string   "description", limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  create_table "tipoplatos", force: :cascade do |t|
+    t.string   "destipplato", limit: 255
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end

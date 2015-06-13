@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @plato.fecha %>
+</p>
+
+<p>
+  <strong>Nomplato:</strong>
+  <%= @plato.nomplato %>
+</p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @plato.cantidad %>
+</p>
+
+<%= link_to 'Edit', edit_plato_path(@plato) %> |
+<%= link_to 'Back', platos_path %>

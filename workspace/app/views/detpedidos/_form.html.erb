@@ -1,0 +1,21 @@
+<%= form_for(@detpedido) do |f| %>
+  <% if @detpedido.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@detpedido.errors.count, "error") %> prohibited this detpedido from being saved:</h2>
+
+      <ul>
+      <% @detpedido.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :canped %><br>
+    <%= f.number_field :canped %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha: 2015-06-13
+  nomplato: MyString
+  cantidad: 1
+
+two:
+  fecha: 2015-06-13
+  nomplato: MyString
+  cantidad: 1

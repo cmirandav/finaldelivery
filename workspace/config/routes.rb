@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   
+  resources :detpedidos
+  resources :pedidos
+  resources :restaurants
+  resources :platos
+  resources :tipoplatos
+  resources :horaentregas
+  resources :ciudads
+  resources :categoria
   get 'menu/index'
 
   devise_for :users

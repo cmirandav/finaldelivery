@@ -1,0 +1,21 @@
+<%= form_for(@tipoplato) do |f| %>
+  <% if @tipoplato.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tipoplato.errors.count, "error") %> prohibited this tipoplato from being saved:</h2>
+
+      <ul>
+      <% @tipoplato.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :destipplato %><br>
+    <%= f.text_field :destipplato %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

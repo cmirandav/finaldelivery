@@ -1,0 +1,2 @@
+module HoraentregasHelper
+end
